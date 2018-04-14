@@ -1,0 +1,233 @@
+<?php
+session_start();
+ include'mysql_connect.php';
+  $email=$_SESSION["email"];
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+    .navbar-brand{
+			float: right;	
+		}
+		#search{
+			/*width: 700px;*/
+		}
+		#nav-icon{
+			font-size: 25px;
+		}
+		.navbar{
+			opacity: 0.92;
+		}
+		#footer{
+		/*opacity: 0.7;*/
+
+		}
+		#footer a{
+			color: white;
+		}
+		#footer p{
+			padding-top: 10px;
+			color: orange;
+		}
+		#footer{
+			padding-bottom: 20px;
+			padding-top: 10px;
+			opacity: 0.92;
+
+		}
+
+		#footer button{
+			padding: 5px;
+			border:2px solid black;
+			background-color: white;
+			border-radius: 5px;	
+		}
+		#footer button:hover{
+			font-size: 10px;
+			color: red;
+		}
+        body{
+    margin: 0;
+    padding:0;
+    background: #fff; 
+    text-align: center;
+    font-family: sans-serif;
+}
+.contact-title{
+    margin-top: 70px;
+    color: navy;
+    text-transform: uppercase;
+    transition: all 4s ease-in-out;
+}
+.contact-title h1{
+   font-size: 32px;
+   line-height: 10px;
+ }
+.contact-title h2{
+    font-size: 16px;
+}
+.form{
+    margin-top: 40px;
+    transition: all 4s ease-in-out;
+
+}
+.form{
+    width: 600px;
+    background: transparent;
+    border: none;
+    outline:none;
+    border-bottom: 1px solid purple;
+    
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.input, .textarea{
+    width: 40%;
+    margin: 15px 0;
+    background: rgba(0,0,0,0);
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid purple;
+}
+
+form .submit{
+    background: #ff5722;
+    border-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20px;
+
+}
+form .submit:hover{
+background-color: #f44336;
+cursor: pointer;
+
+
+}
+.first{
+    margin-top: 50px;
+    float: left;
+    margin-left: 100px;
+    width: 300px;
+    text-align: center;
+    color: navy;
+}
+.second{
+    margin-top: 50px;
+    float: left;
+    margin-left: 80px;
+    width: 300px;
+    text-align: center;
+    color: navy;
+}
+.third{
+    margin-top: 50px;
+    float: left;
+    margin-left: 80px;
+    width: 300px;
+    text-align: center;
+    color:navy;
+}
+.modal_btn{
+      background: transparent;
+      outline: none;
+      border: none;
+    }
+     table{
+       
+
+    }
+    
+      table  .t_content td{
+        padding: 30px;
+        text-align: center;
+        
+      }
+      table  .t_head th{
+        padding: 20px;
+        text-align: center;
+        border: 1px solid green;
+        
+      }
+      .footer td{
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+<?php include'navbar.php';  ?>
+<div class="container">
+	<div class="contact-title">
+    <h1 style="margin: 20px;">Say Hello</h1>
+    <h2>We are always ready to Serve you!</h2>
+</div>
+<div class="contact-form">
+    <form  id="contact-form" method="post" action="">
+
+        <input type="text" name="fname" class="form" placeholder="Your first Name...">
+        <br>
+        <input type="text" name="lname" class="form" placeholder="Your last Name...">
+        <br>
+        <input type="text" name="email" class="form" placeholder="Your E-mail Id...">
+        <br>
+        <textarea name="text" class=" form" placeholder="Write Your subject... " rows="5"></textarea>
+        <br>
+        <input type="submit" class="submit" value="SUBMIT YOUR SUBJECT">
+    </form>
+</div>
+
+
+	
+</div>
+
+<div class="container" style="margin-top:20px;">
+	<div class="row">
+	<div class="col-md-4">
+        <p>Address: 265/1/A flat no. 35(C),Aftabnagar,Dhaka-1219</p>
+        <p>Phone: 01623085581,01914567890<p>
+        <p><font color="red"> E-mail:e-shop420@gmail.com</font><p>
+    </div>
+    <div class="col-md-4">
+          <p>Address: 133/2/B flat no. 89(A),Dhanmondi,Dhaka-1415</p>
+        <p>Phone: 01798765434,01914567890<p>
+        <p><font color="red"> E-mail:e-shop420@gmail.com</font><p>
+    
+    </div>
+    <div class="col-md-4">
+          <p>Address: 345/3/C House no. 420,Mohammadpur,Dhaka-1314</p>
+        <p>Phone: 01812345672,01914567890<p>
+        <p><font color="red"> E-mail:e-shop420@gmail.com</font><p>
+    
+    </div>
+	</div>
+	
+</div>
+
+
+
+
+
+	<!--------footer------>
+<div class="container-fluid">
+	<div class="row bg-dark text-light">
+		<div class="col-md-12">
+			<p class="text-center" style="padding-top: 10px;">&copy Copyright 2018.All Rights Reserved.</p>
+			<p class="text-center" style="padding-bottom: 10px;">Developed by Team PI</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

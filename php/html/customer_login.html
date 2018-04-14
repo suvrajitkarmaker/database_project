@@ -1,0 +1,141 @@
+<?php
+
+	session_start();
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style type="text/css">
+    	.input{
+    		width: 80%;
+    		margin:auto;
+    		padding: 10px;
+    	}
+    	.button{
+    		width: 20%;
+    		margin:auto;
+    		padding: 10px;
+    		background: none;
+    		outline: none;
+    		color: #FFFFFF;
+    		font-weight: bold;
+    		border: 2px solid white;
+
+    	}
+    	.button:hover{
+    		background: #00CCCC;
+    		box-shadow: 2px 2px 2px #888888
+    	}
+    	.body{
+    		background: linear-gradient(#71E4BA,#72DBEE);
+    		border-top-right-radius:  10px;
+    		border-top-left-radius: 10px;
+    		padding: 10px;
+    		border-right: 1px solid gray;
+    		border-left: 1px solid gray;
+    		border-top: 1px solid gray;
+    	}
+    	.logo{
+    		height:100px;
+    		width: 100px;
+    		margin:auto;
+    	}
+    	.facebook{
+    		background-color: #5384C5;
+    		color: white;
+    		padding: 10px;
+    		width: 60%;
+    		margin: auto;
+    		border:none;
+    		outline: none;
+    	}
+    	.twitter{
+    		background-color: #48B1F3;
+    		color: white;
+    		padding: 10px;
+    		width: 60%;
+    		margin: auto;
+    		border:none;
+    		outline: none;
+    	}
+    	.lowerbody{
+    		padding: 50px;
+    		background-color: white;
+    		border-right: 1px solid gray;
+    		border-left: 1px solid gray;
+    		border-bottom: 1px solid gray;
+    		border-bottom-right-radius:  10px;
+    		border-bottom-left-radius: 10px;
+
+    	}
+    	.twitter:hover{
+    		box-shadow: 2px 2px 2px #888888;
+    	}
+    	.facebook:hover{
+    		box-shadow: 2px 2px 2px #888888;
+    	}
+    	.container{
+    		margin-top: 5%;
+    	}
+    </style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 text-center body">
+				<div>
+					<img src="media/logo.png" class="logo">
+					<h3 style="color: #FFFFE9;opacity: 0.8; letter-spacing: 3px; padding: 10px;">LOGIN</h3>
+				</div>
+				<form>
+					<div class="form-group">
+						<input class="form-control input" type="text" name="email" size="20" placeholder="Email address" required>
+					</div>
+					<div class="form-group">
+						<input class="form-control input" type="password" name="password" placeholder="Password" size="20" required>
+					</div>
+					<div>
+						<?php
+							echo "Hello";
+						?>
+					</div>
+					<div class="form-group">
+						<button class="form-control button" name="submit">Go</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 text-center lowerbody">
+				<form>
+					<div class="form-group">
+						<button class="form-control facebook">Login With Facebook</button>
+					</div>
+					<div class="form-group">
+						<button class="form-control twitter">Login With Twitter</button>
+					</div>
+				</form>
+				<div>
+					<span><a href="" class="nav-link" style="color: #272822">Create an account.</a></span>
+				</div>
+				<div style="color: #272822;">
+					<span class="small"><a href="" style="padding:2px 2px 2px 2px;">About</a></span><span>|</span><span class="small"><a href="" style="padding:2px 2px 2px 2px;">Contact Us</a></span>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</body>
+</html>

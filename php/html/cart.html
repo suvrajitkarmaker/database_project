@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+    .body{
+    	height: 850px;
+    }
+
+
+     .navbar-brand{
+      float: right; 
+    }
+    #search{
+      /*width: 700px;*/
+    }
+    #nav-icon{
+      font-size: 25px;
+    }
+    .navbar{
+      opacity: 0.92;
+    }
+    #footer{
+    /*opacity: 0.7;*/
+
+    }
+    #footer a{
+      color: white;
+    }
+    #footer p{
+      padding-top: 10px;
+      color: orange;
+    }
+    #footer{
+      padding-bottom: 20px;
+      padding-top: 10px;
+      opacity: 0.92;
+
+    }
+
+    #footer button{
+      padding: 5px;
+      border:2px solid black;
+      background-color: white;
+      border-radius: 5px; 
+    }
+    #footer button:hover{
+      font-size: 10px;
+      color: red;
+    }
+
+    table{
+    	margin-top:50px; 
+
+    }
+    
+    	table  .t_content td{
+    		padding: 30px;
+    		text-align: center;
+    		
+    	}
+    	table  .t_head th{
+    		padding: 20px;
+    		text-align: center;
+    		border: 1px solid green;
+    		
+    	}
+    	.footer td{
+    		padding: 10px;
+    		text-align: center;
+    	}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand bg-success navbar-dark sticky-top">
+		<div class="container-fluid">
+			<div class="col-md-3">
+				<a class="navbar-brand" href="shop_front.php" id="logo-head"><img class="image" src="media/logo.png" alt="logo" style="width:60px;"></a>
+			</div>
+			<div class="col-md-5">
+				<form class="form-inline" action="/action_page.php">
+					<div class="input-group">
+						<input class="form-control" type="text" placeholder="Search" id="search" size="100">
+				        <div class="input-group-btn">
+					      <button class="btn btn-light" type="submit">
+					        <i class="fa fa-search" aria-hidden="true"></i>
+					      </button>
+						</div>
+					</div>
+			   </form>
+			</div>
+			<div class="col-md-4">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href=""><i class="fa fa-question-circle" aria-hidden="true" id="nav-icon"></i> Help</a></li>
+
+
+					<li class="nav-item">
+						<div class="dropdown">
+							<a href="" class="nav-link" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true" id="nav-icon"></i>  <?php if(isset($_SESSION["login"]) && $_SESSION["login"]==true)  echo $_SESSION["username"];else echo "Login";?>  <i class="fa fa-level-down"></i></a>
+
+
+							<div class="dropdown-menu" style="border:1px solid black ;z-index: 1;">
+							<?php
+
+							  if(isset($_SESSION["login"]) && $_SESSION["login"]==true){
+							  	 $email=$_SESSION["email"];
+
+							  	$result = mysqli_query($conn, "SELECT image FROM userpic where email='$email'"); 
+				                if(mysqli_num_rows($result) > 0 ){
+				                    while ($row = mysqli_fetch_array($result)) { 
+				                    echo '<div class="thumbnail"><img class="img-thumbnail" src="media/user/'.$row['image'].'" style="width: 60px;height: 60px; display: block;margin-left: auto;margin-right: auto;"><hr><div class="text-center"><a href="logout.php">Logout</a></div><div class="text-center"><a class="text-center" href="edit_profile.php" >Edit Profile</a></div>';
+				                    
+
+				                  }
+				                }
+
+							  	
+							  }
+							  else{
+							  	
+							  	echo '<div class="thumbnail"><img class="img-thumbnail" src="media/profile.jpg" style="width: 60px;height: 60px; display: block;margin-left: auto;margin-right: auto;"><hr><div class="text-center"><a href="customer_login.php">Login</a></div><div class="text-center"><a class="text-center" href="user_regi.php" >Signup</a></div>';
+							  }
+							?>
+						</div>
+						</div>
+					</li>
+
+
+					<li class="nav-item"><a class="nav-link" href=""><i class="fa fa-shopping-cart" id="nav-icon" aria-hidden="true"></i> Cart  <span class="badge badge-light">4</span></a></li>
+				</ul>
+			</div>
+		</div>	
+	</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="container-fluid body">  
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="d-flex d-flex justify-content-center align-items-center" style="margin: 1px solid black">
+					 <table class="table table-bordered table-sm" style="margin-bottom: 50px;">
+					    
+					      <tr class="t_head">
+					      	<th>Status</th>
+					        <th>Product Name</th>
+					        <th>Price</th>
+					        <th>Unit</th>
+					        <th>Total Price</th>
+					      </tr>
+					    
+					  
+					      <tr class="t_content">
+					      	<td><button>Remove</button></td>
+					        <td>John</td>
+					        <td>500$</td>
+					        <td><select>
+					        	<option>1</option>
+					        	<option>2</option>
+					        	<option>3</option>
+					        	<option>4</option>
+					        	<option>5</option>
+					        </select></td>
+					        <td>100$</td>
+					      </tr>
+
+
+					      <tr class="footer">
+					      	<td colspan="4"> Amount have to pay(Ex. Without Delivary charge):</td>
+					      	<td>5000$</td>
+					      </tr>
+					   
+					  </table>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+
+
+
+<script>
+	  $(document).ready(function() {
+    var bodyheight = $(document).height()-230;
+    $(".body").height(bodyheight);
+});
+</script>
+
+
+
+
+  <!--------footer------>
+<div class="container-fluid" >
+  <div class="row bg-dark text-light">
+    <div class="col-md-12">
+      <p class="text-center" style="padding-top: 10px;">&copy Copyright 2018.All Rights Reserved.</p>
+      <p class="text-center" style="padding-bottom: 10px;">Developed by Team PI</p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

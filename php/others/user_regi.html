@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Logo-->
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <style type="text/css">
+    	.navbar-brand{
+			float: right;	
+		}
+		#search{
+			/*width: 700px;*/
+		}
+		#nav-icon{
+			font-size: 25px;
+		}
+		.navbar{
+			opacity: 0.92;
+		}
+		#footer{
+		/*opacity: 0.7;*/
+
+		}
+		#footer a{
+			color: white;
+		}
+		#footer p{
+			padding-top: 10px;
+			color: orange;
+		}
+		#footer{
+			padding-bottom: 20px;
+			padding-top: 10px;
+			opacity: 0.92;
+
+		}
+
+		#footer button{
+			padding: 5px;
+			border:2px solid black;
+			background-color: white;
+			border-radius: 5px;	
+		}
+		#footer button:hover{
+			font-size: 10px;
+			color: red;
+		}
+
+
+    	.first_name,.last_name,.pass, .repass,.check{
+    		margin: 6px;
+    	}
+    	.gander{
+    		margin: 6px;
+    		 width: 89.5% !important;
+
+    	}
+    	.date{
+    		margin: 6px;
+    		width: 88% !important;
+    	}
+    	.email{
+    		margin: 6px;
+    		width: 91.5% !important;
+    	}
+    	.create{
+    		background: none;
+    		outline: none;
+    		border: 1px solid black;
+    		margin-top: 20px;
+    		font-weight: bold;
+    		font-size: 20px;
+    	}
+    	.body{
+    		margin-top: 3%;
+
+    	}
+    	.create:hover{
+    		background:#46BEF0;
+    		color: white; 
+    	}
+
+    	.section{
+    		
+
+    	}
+    	
+    </style>
+</head>
+<body>
+
+
+
+	<nav class="navbar navbar-expand bg-success navbar-dark sticky-top">
+		<div class="container-fluid">
+			<div class="col-md-3">
+				<a class="navbar-brand" href="" id="logo-head"><img class="image" src="media/logo.png" alt="logo" style="width:60px;"></a>
+			</div>
+			<div class="col-md-5">
+				<form class="form-inline" action="/action_page.php">
+					<div class="input-group">
+						<input class="form-control" type="text" placeholder="Search" id="search" size="100">
+				        <div class="input-group-btn">
+					      <button class="btn btn-light" type="submit">
+					        <i class="fa fa-search" aria-hidden="true"></i>
+					      </button>
+						</div>
+					</div>
+			   </form>
+			</div>
+			<div class="col-md-4">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href=""><i class="fa fa-question-circle" aria-hidden="true" id="nav-icon"></i> Help</a></li>
+					<li class="nav-item"><a class="nav-link" href="customer_login.php"><i class="fa fa-user" aria-hidden="true" id="nav-icon"></i> Login</i></a></li>
+					<li class="nav-item"><a class="nav-link" href=""><i class="fa fa-shopping-cart" id="nav-icon" aria-hidden="true"></i> Cart  <span class="badge badge-light">4</span></a></li>
+				</ul>
+			</div>
+		</div>	
+	</nav>
+
+
+	<div class="container body">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 section">
+				<div>
+					<h3 class="text-center" style="color: #788088; padding:30px;border-bottom: 1px solid black; padding-bottom:10px; ">CREATE A NEW ACCOUNT</h3>
+				</div>
+				<form style="margin-top: 30px;">
+					<div class="form-group form-inline">
+						<div class="form-inline">
+							<label>First Name:</label>
+							<input class="form-control first_name" size="30" type="text" name="first_name">
+						</div>
+						<div class="form-inline">
+							<label>Last Name:</label>
+							<input class="form-control last_name" size="30" type="text" name="last_name">
+						</div>
+					</div>
+
+
+					<div class="form-group" style="margin-left: 40px;">
+						<div class="form-inline">
+							<label>Email:</label>
+							<input class="form-control email" type="text" name="">
+						</div>
+					</div>
+
+
+					<div class="form-group form-inline" style="margin-left: 11px;">
+						<div class="form-inline">
+							<label>Password:</label>
+							<input class="form-control pass" size="26" type="password" name="">
+						</div>
+						<div class="form-inline">
+							<label>Re-type Password:</label>
+							<input class="form-control repass" size="27" type="password" name="">
+						</div>
+					</div>
+
+
+
+					<div class="form-group " style="margin-left: 25px;">
+						<div class="form-inline">
+							<label>Gender:</label>
+							<select class="form-control gander">
+								<option>Select</option>
+								<option>Male</option>
+								<option>Female</option>
+							</select>	
+						</div>
+					</div>
+
+
+
+
+					<div class="form-group" style="margin-left: 12px;">
+						<div class="form-inline">
+							<label>Birthdate:</label>
+							<input class="form-control date" type="date" name="">
+						</div>
+					</div>
+
+
+					<div class="form-check form-check-inline check" style="margin-left:90px;">
+						<label class="form-check-label"><input class="form-check-input" type="checkbox" name="">I have read and accept the Terms & Conditions.</label>
+					</div>
+
+					<div class="text-center">
+						<button class="form-control create">Create</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+
+
+
+	<div class="container-fluid bg-secondary text-light text-center" id="footer" style="border: 1px solid black;margin-top:5%">
+		<div class="row">
+			<div class="col-md-12" style="letter-spacing: 15px;padding-bottom: 30px">
+				<h3>Experience Best Online Shopping In Bangladesh</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-2">
+				<p>CUSTOMER SERVICE</p>
+				<a href="">Help Center</a><br>
+				<a href="">How to Shop on E-shop</a><br>
+				<a href="">Track your Order</a><br>
+				<a href="">Why Shop on E-shop</a><br>
+				<a href="">Returns & Refunds</a><br>
+				<a href="">Contact Us</a><br>
+				<p>MAKE MONEY WITH US</p>
+				<a href="">Become a Sales Consultant</a><br>
+				<a href="">Become an Affiliate Partner</a><br>
+				<a href="">Seller Hub</a><br>
+				<a href="">Code of Conduct</a><br>
+			</div>
+			<div class="col-md-2">
+				<p>ABOUT US</p>
+				<a href="">About Site</a><br>
+				<a href="">Corporate Sales</a><br>
+				<a href="">Terms and Conditions</a><br>
+				<a href="">Privacy Policy</a><br>
+				<a href="">Careers</a><br>
+				<a href="">Sign Up to our Newsletter</a><br>
+				<p>GET TO KNOW US</p>
+				<a href="">Press Corner</a><br>
+				<a href="">Visit our Blog</a><br>
+			</div>
+			<div class="col-md-2">
+				<p>E-Shop INTERNATIONAL</p>
+				<a href="">Nepal</a><br>
+				<a href="">Pakistan</a><br>
+				<a href="">Myanmar</a><br>
+				<a href="">Sri Lanka</a><br>
+			</div>
+			<div class="col-md-2">
+				<p>JOIN US ON</p>
+				<button><i class="fa fa-facebook" id="fb"></i></button>
+				<button><i class="fa fa-twitter"></i></button>
+				<button><i class="fa fa-instagram"></i></button>
+				<button><i class="fa fa-youtube"></i></button>
+				<button><i class="fa fa-google-plus"></i></button>
+				<p>PAYMENT METHODS</p>
+				<button><i class="fa fa-cc-mastercard"></i></button>
+				<button><i class="fa fa-cc-visa"></i></button>
+				<button><i class="fa fa-paypal"></i></button>
+				<button><i class="fa fa-truck"></i></button>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+</body>
+</html>
